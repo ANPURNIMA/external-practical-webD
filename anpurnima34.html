@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flexbox Pricing Table</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: "Sono", sans-serif;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .pricing-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .pricing-plan {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 270px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .pricing-plan:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .plan-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .plan-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .plan-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0072ff;
+            margin-bottom: 10px;
+        }
+
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .plan-features li {
+            margin: 8px 0;
+        }
+
+        .plan-button {
+            padding: 12px;
+            border: none;
+            background: #0072ff;
+            color: white;
+            cursor: pointer;
+            border-radius: 25px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .plan-button:hover {
+            background: #0056b3;
+        }
+
+        /* Highlight Standard Plan */
+        .highlight {
+            background: #f8f9fa;
+            border: 2px solid #0072ff;
+        }
+
+        .highlight .plan-title {
+            color: #0072ff;
+        }
+
+        .highlight::before {
+            content: "Best Value";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff9800;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pricing-container">
+        <div class="pricing-plan">
+            <img src="https://cdn-icons-png.flaticon.com/512/609/609803.png" alt="Basic Plan Icon" class="plan-icon">
+            <div class="plan-title">Basic</div>
+            <div class="plan-price">$9.99/month</div>
+            <ul class="plan-features">
+                <li>✅ 10GB Storage</li>
+                <li>✅ 1 User</li>
+                <li>🚫 No Support</li>
+            </ul>
+            <button class="plan-button">Sign Up</button>
+        </div>
+
+        <div class="pricing-plan highlight">
+            <img src="https://cdn-icons-png.flaticon.com/512/609/609798.png" alt="Standard Plan Icon" class="plan-icon">
+            <div class="plan-title">Standard</div>
+            <div class="plan-price">$19.99/month</div>
+            <ul class="plan-features">
+                <li>✅ 50GB Storage</li>
+                <li>✅ 5 Users</li>
+                <li>✅ Phone & Email Support</li>
+            </ul>
+            <button class="plan-button">Sign Up</button>
+        </div>
+
+        <div class="pricing-plan">
+            <img src="https://cdn-icons-png.flaticon.com/512/609/609812.png" alt="Premium Plan Icon" class="plan-icon">
+            <div class="plan-title">Premium</div>
+            <div class="plan-price">$49.99/month</div>
+            <ul class="plan-features">
+                <li>✅ 100GB Storage</li>
+                <li>✅ 10 Users</li>
+                <li>✅ 24/7 Support</li>
+            </ul>
+            <button class="plan-button">Sign Up</button>
+        </div>
+    </div>
+</body>
+
+</html>
